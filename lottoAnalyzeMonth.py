@@ -48,7 +48,19 @@ for i in range(1, 13):  # 1~12월까지
     # print('------------------------')
     # print(lotto_month_data)
     # print('------------------------')
-    lotto_month_top6 = lotto_month_data.head(6)
-    print('*******************')
-    print(lotto_month_top6)
-    print('*******************')
+    lotto_month_top6 = lotto_month_data.head(6)  # 빈도수가 많은 상위 6개 수만 추출
+    # print('*******************')
+    # print(lotto_month_top6)
+    # print('*******************')
+
+    plt.subplot(4, 3, i)
+    plt.subplots_adjust(left=0.125, bottom=0.1, right=0.9, top=0.9, wspace=0.3, hspace=0.5)
+    lotto_month_top6.plot(figsize=(10, 30), kind='bar', grid=True, title='월별 로또당첨번호 출현 빈도수')
+    plt.title(f"{i}월")  # 각 그래프의 제목
+    plt.xlabel("빈도수")  # 각 그래프의 x축 제목
+    plt.ylabel("로또번호")  # 각 그래프의 y축 제목
+
+plt.show()
+
+cur.close()
+dbConn.close()
