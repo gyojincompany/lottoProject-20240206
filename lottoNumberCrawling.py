@@ -12,7 +12,7 @@ def get_recent_count():
     # print(html)
     soup = BeautifulSoup(html, 'lxml')
     # print(soup)
-    recent_count = soup.find('strong',id='lottoDrwNo').text  #로또 최신회차값 가져오기
+    recent_count = soup.find('strong', id='lottoDrwNo').text  #로또 최신회차값 가져오기
     # print(recent_count)
     recent_count = int(recent_count)  # 최신회차값을 정수로 변경
     return recent_count
